@@ -1,0 +1,41 @@
+body {
+	font-family: "Lucida Sans Unicode", "Lucida Grande", sans-serif;
+	background-color: #fffdd0;
+	color: #66401a;
+}
+
+#firstbox, #lastbox, #addressbox, #citybox, #email, #emailconfirm {
+	width: 250px;
+}
+
+#postcode, #zipcode, #areacode {
+	width: 50px;
+}
+
+#phonenumber {
+	width: 100px;
+}
+
+input[type=radio], input[type=checkbox] {
+	outline: 1px dashed;
+}
+
+.warningtext {
+	color: #ff0000;
+}
+
+.bad {
+	border-style: dashed;
+}
+
+.good {
+	border-style: none;
+}
+
+.comments {
+	width: 250px;
+}
+
+.email {
+	color: #FF0000;
+}

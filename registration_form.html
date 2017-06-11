@@ -1,0 +1,224 @@
+<!DOCTYPE html>
+
+<html>
+	<head>
+		<meta content="text/html;charset=utf-8" http-equiv="Content-Type">
+		<title>Registration Form</title>
+		<link rel="stylesheet" type="text/css" href="regform.css"/>
+		<script src=regform.js></script>
+	</head>
+
+	<body>
+		<h1>Registration Form</h1>
+		<form action='mailto:miwjopo@gmail.com' onsubmit='return submitForm ()' method='post'>
+			<table>
+			<tr>
+				<td>First Name:</td>
+				<td><input type="text" id="firstbox" name="firstname" value="First"
+					class="bad" onblur='validateText (this,"First","nametest");'
+					onclick='this.select ();'></td>
+			</tr>
+			<tr>
+				<td>Last Name:</td>
+				<td><input type="text" id="lastbox" name="lastname" value="Last"
+					class="bad" onblur='validateText (this,"Last","nametest");'
+					onclick='this.select ();'></td>
+			</tr>
+			<tr>
+				<td>Address:</td>
+				<td><input type="text" id="addressbox" name="address"
+					class="bad" onblur='validateText (this,null,"addresstest");'
+					onclick='this.select ();'></td>
+			</tr>
+			<tr>
+				<td>City:</td>
+				<td><input type="text" id="citybox" name="city"
+					class="bad" onblur='validateText (this,null,"nametest");'
+					onclick='this.select ();'></td>
+			</tr>
+			<tr>
+				<td>State/Post Area:</td>
+				<td><select id="postcode" name="stateSelectList"
+					class="bad" onchange='getState (this.form.stateSelectList);'>
+
+					<option value="" selected="selected"></option>
+					<option value="AL">Alabama (AL)</option>
+					<option value="AK">Alaska (AK)</option>
+					<option value="AS">American Samoa (AS)</option>
+					<option value="AZ">Arizona (AZ)</option>
+					<option value="AR">Arkansas (AR)</option>
+					<option value="CA">California (CA)</option>
+					<option value="CO">Colorado (CO)</option>
+					<option value="CT">Connecticut (CT)</option>
+					<option value="DE">Delaware (DE)</option>
+					<option value="DC">District of Columbia (DC)</option>
+					<option value="FL">Florida (FL)</option>
+					<option value="GA">Georgia (GA)</option>
+					<option value="GU">Guam (GU)</option>
+					<option value="HI">Hawaii (HI)</option>
+					<option value="ID">Idaho (ID)</option>
+					<option value="IL">Illinois (IL)</option>
+					<option value="IN">Indiana (IN)</option>
+					<option value="IA">Iowa (IA)</option>
+					<option value="KS">Kansas (KS)</option>
+					<option value="KY">Kentucky (KY)</option>
+					<option value="LA">Louisiana (LA)</option>
+					<option value="ME">Maine (ME)</option>
+					<option value="MD">Maryland (MD)</option>
+					<option value="MA">Massachusetts (MA)</option>
+					<option value="MI">Michigan (MI)</option>
+					<option value="MN">Minnesota (MN)</option>
+					<option value="MS">Mississippi (MS)</option>
+					<option value="MO">Missouri (MO)</option>
+					<option value="MT">Montana (MT)</option>
+					<option value="NE">Nebraska (NE)</option>
+					<option value="NV">Nevada (NV)</option>
+					<option value="NH">New Hampshire (NH)</option>
+					<option value="NJ">New Jersey (NJ)</option>
+					<option value="NM">New Mexico (NM)</option>
+					<option value="NY">New York (NY)</option>
+					<option value="NC">North Carolina (NC)</option>
+					<option value="ND">North Dakota (ND)</option>
+					<option value="MP">Northern Mariana Islands (MP)</option>
+					<option value="OH">Ohio (OH)</option>
+					<option value="OK">Oklahoma (OK)</option>
+					<option value="OR">Oregon (OR)</option>
+					<option value="PA">Pennsylvania (PA)</option>
+					<option value="PR">Puerto Rico (PR)</option>
+					<option value="RI">Rhode Island (RI)</option>
+					<option value="SC">South Carolina (SC)</option>
+					<option value="SD">South Dakota (SD)</option>
+					<option value="TN">Tennessee (TN)</option>
+					<option value="TX">Texas (TX)</option>
+					<option value="AA">U.S. Armed Forces - Americas (AA)</option>
+					<option value="AE">U.S. Armed Forces - Europe (AE)</option>
+					<option value="AP">U.S. Armed Forces - Pacific (AP)</option>
+					<option value="VI">U.S. Virgin Islands (VI)</option>
+					<option value="UT">Utah (UT)</option>
+					<option value="VT">Vermont (VT)</option>
+					<option value="VA">Virginia (VA)</option>
+					<option value="WA">Washington (WA)</option>
+					<option value="WV">West Virginia (WV)</option>
+					<option value="WI">Wisconsin (WI)</option>
+					<option value="WY">Wyoming (WY)</option>
+				</select></td>
+			</tr>
+			<tr>
+				<td>Zip Code:</td>
+				<td><input type="text" id="zipcode" name="zipcode"
+					class="bad" onblur='validateText (this,null,"ziptest");'
+					onclick='this.select ();'></td>
+			</tr>
+			<tr>
+				<td>Phone:</td>
+				<td><input type="text" id="areacode" name="areacode"
+					class="bad" onblur='validateText (this,null,"areacodetest");'
+					onclick='this.select ();'>
+				<input type="text" id="phonenumber" name="phonenumber"
+					class="bad" onblur='validateText (this,null,"phonetest");'
+					onclick='this.select ();'></td>
+			</tr>
+			<tr>
+				<td>E-mail:</td>
+				<td><input type="text" id="email" name="email"
+					class="bad" onblur='validateText (this,null,"emailtest");'
+					onclick='this.select ();'></td>
+			</tr>
+			<tr>
+				<td>Confirm e-mail:</td>
+				<td><input type="text" id="emailconfirm" name="emailconfirm"
+					class="bad" onblur='validateText (this,null,"emailtest");'
+					onclick='this.select ();'></td>
+			</tr>
+			<tr>
+				<td>Meal preference:</td>
+				<td><input type="radio" name="mealpreference" value="Vegan">Vegan</td>
+			</tr>
+			<tr>
+				<td></td>
+				<td><input type="radio" name="mealpreference" value="Vegetarian">Vegetarian</td>
+			</tr>
+			<tr>
+				<td></td>
+				<td><input type="radio" name="mealpreference" value="Non-vegetarian">Non-Vegetarian</td>
+			</tr>
+			<tr>
+				<td>Contact Method:</td>
+				<td><input type="checkbox" name="contactmethod" id="phonecheckbox"
+					value="Contact by phone">Phone</td>
+			</tr>
+			<tr>
+				<td><i>(select more than one)</i></td>
+				<td><input type="checkbox" name="contactmethod" id="emailcheckbox"
+					value="Contact by e-mail">E-mail</td>
+			</tr>
+			<tr>
+				<td></td>
+				<td><input type="checkbox" name="contactmethod" id="mailcheckbox"
+					value="Concact by mail">Mail</td>
+			</tr>
+			<tr>
+				<td></td>
+				<td><input type="checkbox" name="contactmethod" id="linkedincheckbox"
+					value="Contact by LinkedIn">LinkedIn</td>
+			</tr>
+			<tr>
+				<td>Comments:</td>
+				<td><textarea id="commentsbox" name="comments" class="comments"></textarea></td>
+			</tr>
+			<tr>
+				<td><i>For our statistics:</i></td>
+			</tr>
+			<tr>
+				<td>Shoe size:</td>
+				<td><select id="shoesize" name="shoesizeSelectList"
+					class="bad" onchange='getShoeSize (this.form.shoesizeSelectList);'>
+
+					<option value="" selected="selected"></option>
+					<option value="4">4</option>
+					<option value="4.5">4.5</option>
+					<option value="5">5</option>
+					<option value="5.5">5.5</option>
+					<option value="6">6</option>
+					<option value="6.5">6.5</option>
+					<option value="7">7</option>
+					<option value="7.5">7.5</option>
+					<option value="8">8</option>
+					<option value="8.5">8.5</option>
+					<option value="9">9</option>
+					<option value="9.5">9.5</option>
+					<option value="10">10</option>
+					<option value="10.5">10.5</option>
+					<option value="11">11</option>
+					<option value="11.5">11.5</option>
+					<option value="12">12</option>
+					<option value="12.5">12.5</option>
+					<option value="13">13</option>
+					<option value="13.5">13.5</option>
+					<option value="14">14</option>
+					<option value="14.5">14.5</option>
+					<option value="15">15</option>
+					<option value="15.5">15.5</option>
+					<option value="16">16</option>
+				</select></td>
+			</tr>
+			<tr>
+				<td>Sex:</td>
+				<td><input type="radio" name="sex" value="Female">Female</td>
+			</tr>
+			<tr>
+				<td></td>
+				<td><input type="radio" name="sex" value="Male">Male</td>
+			</tr>
+			<tr>
+				<td></td>
+				<td><input type="radio" name="sex" value="Decline to answer">Decline to answer</td>
+			</tr>
+			</table>
+			<input type="reset" value="Reset" onclick='resetForm ()'>
+			<input type="submit" value="Submit" id="submit" onclick='submitForm ();'>
+		</form>
+			<p class="warningtext">Dashed boxes are required</p>
+	</body>
+
+</html>
